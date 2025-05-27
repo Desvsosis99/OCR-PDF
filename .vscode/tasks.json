@@ -1,0 +1,54 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"command": "pip install -r requirements.txt",
+			"group": "build",
+			"label": "Instalar dependencias",
+			"problemMatcher": [],
+			"type": "shell"
+		},
+		{
+			"command": "python app.py",
+			"group": "build",
+			"isBackground": true,
+			"label": "Ejecutar aplicación OCR PDF (Local)",
+			"problemMatcher": [],
+			"type": "shell",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "new"
+			}
+		},
+		{
+			"command": "docker-compose up --build",
+			"group": "build",
+			"isBackground": true,
+			"label": "Ejecutar aplicación OCR PDF (Docker)",
+			"problemMatcher": [],
+			"type": "shell",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "new"
+			}
+		},
+		{
+			"command": "docker-compose down",
+			"group": "build",
+			"label": "Detener aplicación Docker",
+			"problemMatcher": [],
+			"type": "shell"
+		},
+		{
+			"command": "tesseract --version",
+			"group": "test",
+			"label": "Verificar Tesseract OCR",
+			"problemMatcher": [],
+			"type": "shell"
+		}
+	]
+}

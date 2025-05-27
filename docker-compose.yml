@@ -1,0 +1,13 @@
+services:
+  ocr-pdf:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./downloads:/app/downloads
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+    restart: unless-stopped
+    container_name: pdf-ocr-app
